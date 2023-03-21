@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import { Banner } from './components';
@@ -8,10 +8,12 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Switch>
-        <Route strict exact path="/" component={TodoPage} />
-        <Route strict exact path="/followers" component={FollowersPage} />
-      </Switch>
+      <Router>
+        <Switch>
+          <Route strict exact path="/" component={TodoPage} />
+          <Route strict exact path="/followers" component={FollowersPage} />
+        </Switch>
+      </Router>
     </div>
   );
 }
